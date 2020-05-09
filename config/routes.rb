@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'db/index'
   # updateアクションへのルーティングを設定してください
   post "users/:id/update" => "users#update"
   post "users/:id/destroy" => "users#destroy"
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
 
   get "login" => "users#login_form"
   post "login" => "users#login"
+  
+  post "logout" => "users#logout"
 
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
@@ -22,6 +25,8 @@ Rails.application.routes.draw do
   
   get "/" => "home#top"
   get "about" => "home#about"
+
+  get "db/index" => "db#index"
 end
 
 

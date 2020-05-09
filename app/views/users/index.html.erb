@@ -12,7 +12,7 @@
           <%= link_to(user.name,"/users/#{user.id}") %>
         </div>
         <div class = "destroy">
-            <%= link_to("削除","/users/#{user.id}/destroy",{method:"user"}) %>
+            <%= link_to("削除","/users/#{user.id}/destroy",{method:"post"}) %>
         </div>
       </div>
     <!-- 以下の<% %>を使ってeach文のendを追加してください -->
