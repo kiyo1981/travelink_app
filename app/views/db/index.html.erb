@@ -1,0 +1,19 @@
+<div class="main db-index">
+  <div class="container">
+    <div class="db-heading">
+        <h3>Database</h3>
+    </div>
+    <div class="container">
+        <% @db_users.each do |user| %>
+            <div class="user-index-item">
+                ID:<%= user.id%>
+                name:<%= user.name %>
+                password:<%= user.password %>
+                email:<%= user.email %>
+                create:<%= user.created_at %>
+                update:<%= user.updated_at %>
+            </div>
+         <% end %>
+    </div>
+  </div>
+</div>
