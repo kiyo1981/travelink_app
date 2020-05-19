@@ -1,13 +1,18 @@
 <div class="main posts-index">
   <div class="container">
-    <!-- 以下の<% %>を使ってeach文を追加してください -->
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <!-- 以下の<%= %>を使って投稿内容を表示してください -->
-        <%= link_to(post.content,"/posts/#{post.id}") %>
-        <%= post.created_at %>
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <!-- link_toメソッドを用いて、ユーザー詳細ページへのリンクを作成してください -->
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
       </div>
-    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
     <% end %>
   </div>
 </div>
